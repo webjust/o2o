@@ -81,4 +81,32 @@ class Category extends Controller
             $this->error('更新失败');
         }
     }
+
+    public function listorder($id, $listorder)
+    {
+        $res = $this->obj->save(['listorder' => $listorder], ['id' => $id]);
+        if ($res) {
+            $this->result($_SERVER['HTTP_REFERER'], 1, 'success');
+        } else {
+            $this->result($_SERVER['HTTP_REFERER'], 0, 'error');
+        }
+    }
+
+    public function status()
+    {
+        // 测试接收到的数据
+//        print_r(input('param.'));
+        // 1. 校验
+        $data = input('param.');
+        // To Do
+
+        // 2. 逻辑
+        $ret = $this->obj->save(['status' => $data['status']], ['id' => $data['id']]);
+        // 3. 渲染
+        if ($ret) {
+            $this->success('状态更新成功！');
+        } else {
+            $this->error('状态更新失败！');
+        }
+    }
 }

@@ -11,3 +11,9 @@ function status($staus)
     }
     return $str;
 }
+
+// 访问api接口
+function doCurl($url)
+{
+    // to do
+}
