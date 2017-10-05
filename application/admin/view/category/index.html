@@ -79,14 +79,14 @@
             'id' : id,
             'listorder' : listorder,
         };
-        console.log(postData);
+//        console.log(postData);
         var url = "{:url('category/listorder')}";
 
         $.post(url, postData, function (res) {
             if (res.code == 1){
                 location.href = res.data;
             } else {
-                alert(res.message);
+                layer.msg(res.message);
             }
         })
     });

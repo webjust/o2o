@@ -9,7 +9,7 @@ class User extends Controller
 {
     public function login()
     {
-        return $this->fetch();
+        return $this->fetch('user/login');
     }
 
     public function register()

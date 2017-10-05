@@ -13,7 +13,17 @@ function status($staus)
 }
 
 // 访问api接口
-function doCurl($url)
+function doCurl($url, $type = 0, $data = [])
 {
-    // to do
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    if ($type == 1) {
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    }
+    $output = curl_exec($ch);
+    curl_close($ch);
+    return $output;
 }

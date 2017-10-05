@@ -14,6 +14,10 @@ class Category extends Model
         return $this->save($data);
     }
 
+    /**
+     * 获取父级分类
+     * @return false|\PDOStatement|string|\think\Collection
+     */
     public function getNormalFirstCategory()
     {
         $data = [
@@ -25,6 +29,7 @@ class Category extends Model
             ->order($order)
             ->select();
     }
+
 
     public function getFirstCategorys($parent_id = 0)
     {
