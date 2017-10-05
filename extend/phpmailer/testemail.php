@@ -6,8 +6,8 @@
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 header("content-type:text/html;charset=utf-8");
-require 'class.phpmailer.php';
-require 'class.smtp.php';
+require 'Phpmailer.php';
+require 'Smtp.php';
 date_default_timezone_set('PRC');//set time
 
 //Create a new PHPMailer instance
