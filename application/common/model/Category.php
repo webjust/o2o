@@ -42,8 +42,6 @@ class Category extends Model
             ->order($order)
             ->paginate();
 
-//        echo $this->getLastSql();
-
         return $result;
     }
 }
